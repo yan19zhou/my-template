@@ -1,22 +1,2 @@
 //配置vuex调用的Mutations逻辑
 export const SET_TOKEN = 'SET_TOKEN'
-export const SET_APPTOKEN = 'SET_APPTOKEN'
-export const SET_USERTOKEN = 'SET_USERTOKEN'
-export const SET_OBJS = 'SET_OBJS'
-export const SET_ALERTTYPE = 'SET_ALERTTYPE'
-export const SET_COMPANYS = 'SET_COMPANYS'
-export const SET_MOREMAP = 'SET_MOREMAP'
-export const SET_MAP = 'SET_MAP' //地图总对像
-export const SET_BASEMAP = 'SET_BASEMAP'
-export const SET_HOSPITAL = 'SET_HOSPITAL' //医院地图像存储
-export const SET_JOIN = 'SET_JOIN' //联勤地图像存储
-export const SET_ROAD = 'SET_ROAD' //路况图像存储
-export const SET_CAR = 'SET_CAR' //进车
-export const SET_FILE = 'SET_FILE' //着火点
-export const SET_ROUTE1 = 'SET_ROUTE1'
-export const SET_ROUTE2 = 'SET_ROUTE2'
-export const SET_POINTS = 'SET_POINTS'
-export const SET_LINE = 'SET_LINE'
-export const SET_MAPHOT = 'SET_MAPHOT' //热力图
-export const SET_MAPICON = 'SET_MAPICON' //首页地图图标
-export const SET_FIRERESOURCES = 'SET_FIRERESOURCES' //所有火警已关联的资源
