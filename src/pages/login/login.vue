@@ -1,18 +1,16 @@
 <template>
-    <div>
-        LOGIN
-    </div>
+<div>LOGIN</div>
 </template>
 
 <script>
-import {Login} from '@/request/login'
-    export default {
-        mounted () {
-          Login();
-        },
-    }
+import {
+    mapActions
+} from "vuex";
+export default {
+    methods: {
+        ...mapActions("user", ["loginUserdo", "loginout"]),
+    },
+};
 </script>
 
-<style lang="stylus" scoped>
-
-</style>
+<style lang="stylus" scoped></style>
