@@ -70,6 +70,7 @@ export default {
         },
         addPoint() {
             this.view.graphics.removeAll();
+            let _this = this;
             var point = {
                 //创建点，并确定点的经度和纬度
                 type: "point", // autocasts as new Polyline()
@@ -95,6 +96,19 @@ export default {
             //地图点击事件获取信息
             this.view.on("click", (e) => {
                 console.log("1111", e);
+                //使用arcgis自带的popup弹窗
+                _this.view.popup.autoOpenEnabled = false;
+                _this.view.popup.open({
+                    // Set the popup's title to the coordinates of the location
+                    title: "Reverse geocode: [" +
+                        e.mapPoint.latitude +
+                        "," +
+                        e.mapPoint.longitude +
+                        "]",
+                    location: e.mapPoint, // Set the location of the popup to the clicked location
+                    content: "This is a point of interest", // content displayed in the popup
+                });
+
                 // hitTest 方法在点击位置上如果存在 Graphic（线或点），即可获取 Graphic 对象的整个数据
                 this.view.hitTest(e).then((res) => {
                     console.log("2222", res);
