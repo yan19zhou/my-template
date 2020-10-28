@@ -183,7 +183,7 @@ export function dateFormat (date, fmt) {
 }
 
     //获取url中hash的参数方法
-    getHashUrlParam(name) {
+  export function  getHashUrlParam(name) {
       const url = window.location.hash; //获取url中"?"符后的字串
       if (url.indexOf("?") != -1) {
         let str = url.split("?")[1];
@@ -195,7 +195,7 @@ export function dateFormat (date, fmt) {
         }
       }
       return null;
-    },
+    }
       //获取url中的参数方法
      getUrlParams(url) {
       url = url == null ? window.location.href : url;
@@ -211,3 +211,21 @@ export function dateFormat (date, fmt) {
       });
       return obj;
     }
+
+    //初始化设置html的font-size
+    export function init(screenRatioByDesign= 16 / 9) {
+      let docEle = document.documentElement
+      function setHtmlFontSize() {
+        var screenRatio = docEle.clientWidth / docEle.clientHeight;
+        var fontSize = (
+          screenRatio > screenRatioByDesign
+            ? (screenRatioByDesign / screenRatio)
+            : 1
+        ) * docEle.clientWidth / 10;
+    
+        docEle.style.fontSize = fontSize.toFixed(3) + "px";
+      }
+      setHtmlFontSize()
+      window.addEventListener('resize', setHtmlFontSize)
+    }
+    
